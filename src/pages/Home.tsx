@@ -34,9 +34,9 @@ const Home = () => {
       <div className={styles.home__heroContent}>
         <HeroContent />
       </div>
-      <div className={styles.home__heroContent}>
-        <Details />
-      </div>
+      {/* <div className={styles.home__heroContent}> */}
+        {/* <Details /> */}
+      {/* </div> */}
       {/* <PortfolioDetails> */}
         <div className={styles.home__detailContent}>
           <AboutMe />

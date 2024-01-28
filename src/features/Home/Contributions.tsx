@@ -4,6 +4,8 @@ import Typography from "../../components/Typography"
 import IcodeThisSVG from '../../assets/images/icodeThisSVG.jsx'
 import CodePenSVG from '../../assets/images/CodePen.jsx'
 import CodeSandboxSVG from '../../assets/images/CodeSandBox.jsx'
+import Heading3 from "../../components/Heading3.js"
+import Pills from "../../components/Pills.js"
 // import FrontendMentorSVG from '../../assets/images/FrontendMentor.svg'
 
 const useStyles = createUseStyles({
@@ -13,7 +15,8 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: "column",
     justifyContent: "center",
-    marginLeft: "5rem"
+    marginLeft: "5rem",
+    gap: ".5em"
   },
   grid: {
     display: "grid",
@@ -32,6 +35,11 @@ const useStyles = createUseStyles({
         aspectRatio: "1"
       }
     }
+  },
+  pillsContainer: {
+    display: "flex",
+    gap: "1rem",
+    flexWrap: "wrap"
   }
 })
 
@@ -42,16 +50,31 @@ const Contributions = () => {
       <Heading1>
           Contributions
       </Heading1>
-      <div className={styles.grid}>
-        <div>
-          <IcodeThisSVG />
-        </div>
-        <div>
-          <CodePenSVG />
-        </div>
-        <div>
-          <CodeSandboxSVG />
-        </div>
+      <div>
+        <Heading3>
+          IcodeThis
+        </Heading3>
+        <Typography>
+          Completed around 17 challenges in icodeThis Platform
+        </Typography>
+      </div>
+
+      <div>
+        <Heading3>
+          CodePen
+        </Heading3>
+        <Typography>
+        Developed around 10 few mini projects in CodePen Platform
+        </Typography>
+      </div>
+
+      <div>
+        <Heading3>
+          CodeSandBox
+        </Heading3>
+        <Typography>
+          Developed few mini projects in CodeSandbox Platform
+        </Typography>
       </div>
     </div>
   )

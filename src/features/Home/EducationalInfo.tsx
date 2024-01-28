@@ -3,6 +3,7 @@ import Heading1 from "../../components/Heading1"
 import Typography from "../../components/Typography"
 import shakthiImg from "../../assets/images/shakthiImg.jpeg"
 import stjosephImg from "../../assets/images/stjosephImg.png"
+import Heading3 from "../../components/Heading3"
 
 const useStyles = createUseStyles({
   container: {
@@ -12,6 +13,7 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     justifyContent: "center",
     marginLeft: "5rem",
+    gap: "1em"
   },
   grid: {
     display: "grid",
@@ -32,13 +34,49 @@ const EducationalInfo = () => {
       <Heading1>
           EducationalInfo
       </Heading1>
-      <div className={styles.grid}>
-        <div>
-          <img src={shakthiImg} alt="" />
-        </div>
-        <div>
-          <img src={stjosephImg} alt="" />
-        </div>
+      <div>
+        <Heading3>
+          Sri Shakthi Institute of Engineering and Technology
+        </Heading3>
+        <Typography>
+          2016 - 2020
+        </Typography>
+        <Typography>
+          BE Computer Science and Engineering
+        </Typography>
+        <Typography>
+          Secured 6.95 CGPA
+        </Typography>
+      </div>
+
+      <div>
+        <Heading3>
+          St.Josephs's Metric Hr Secondary School
+        </Heading3>
+        <Typography>
+          2016
+        </Typography>
+        <Typography>
+          HSC
+        </Typography>
+        <Typography>
+          Secured 93.33%
+        </Typography>
+      </div>
+
+      <div>
+        <Heading3>
+          St.Josephs's Metric Hr Secondary School
+        </Heading3>
+        <Typography>
+          2016
+        </Typography>
+        <Typography>
+          SSLC
+        </Typography>
+        <Typography>
+          Secured 93.40%
+        </Typography>
       </div>
     </div>
   )
