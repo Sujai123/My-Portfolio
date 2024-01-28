@@ -18,6 +18,7 @@ const theme: ThemeProps = {
   },
   fontSize: {
     h1: "clamp(2.5rem, 5vw, 4rem)",
+    h3: "clamp(1.5rem, 2.5vw, 2rem)",
     button: "clamp(1.4rem, 2vw, 2rem)",
     p: "clamp(1.4rem, 2vw, 2rem)",
   },

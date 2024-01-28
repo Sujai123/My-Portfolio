@@ -22,7 +22,7 @@ const AboutMe = () => {
           About Me
       </Heading1>
       <Typography>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dicta consequuntur assumenda facere, quis animi suscipit voluptates distinctio nobis exercitationem eveniet quo qui fugit reiciendis error magni quas omnis asperiores, voluptatum quam reprehenderit rem. Aut perspiciatis, veniam ex quaerat, nisi consequatur quo sunt dolores beatae vel, hic cum! Cumque, aspernatur?
+        Passionate about crafting seamless web experiences, I bring concepts to life with elegant UIs and robust backends. Let's turn your ideas into digital marvels! 💻✨
       </Typography>
     </div>
   )
