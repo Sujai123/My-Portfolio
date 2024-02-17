@@ -1,0 +1,9 @@
+.sb-pills {
+  display: inline-block;
+  background: $secondary-background;
+  color: $text-secondary;
+  font-size: $p;
+  @include padding-block('xxxs');
+  @include padding-inline('md');
+  @include border-radius('xxs');
+}

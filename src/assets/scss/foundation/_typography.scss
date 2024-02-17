@@ -1,0 +1,39 @@
+/*=============================================
+=        Foundation - Typography              =
+=============================================*/
+
+/**
+ * This file defines the default font sizes to be used on headings and texts. The defaults come
+ * from the palette defined in _variables.scss.
+ */
+
+/*=============================================
+=            Body font family                  =
+=============================================*/
+$body-font-family: var(--sb-body-font-family, $mali) !default;
+
+/*=============================================
+=            Body font sizes                  =
+=============================================*/
+
+$body-font-size: var(--sb-body-font-size, $fs-sm) !default;
+$body-font-weight: var(--sb-body-font-weight, $fw-normal) !default;
+
+/*=============================================
+=            Heading font sizes               =
+=============================================*/
+
+$h-1-font-size: var(--sb-h1-font-size, $h-1) !default;
+$h-2-font-size: var(--sb-h2-font-size, $h-2) !default;
+$h-3-font-size: var(--sb-h3-font-size, $h-3) !default;
+
+/*=============================================
+=            Head font weights                =
+=============================================*/
+
+$h-1-font-weight: var(--sb-h1-text-weight, $fw-black) !default;
+$h-2-font-weight: var(--sb-h2-text-weight, $fw-semibold) !default;
+$h-3-font-weight: var(--sb-h3-text-weight, $fw-bold) !default;
+$h-4-font-weight: var(--sb-h4-text-weight, $fw-medium) !default;
+$h-5-font-weight: var(--sb-h5-text-weight, $fw-normal) !default;
+$h-6-font-weight: var(--sb-h6-text-weight, $fw-light) !default;

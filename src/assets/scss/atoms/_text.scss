@@ -1,0 +1,5 @@
+@each $size, $value in $fs {
+  .sb-text-#{$size} {
+    font-size: $value;
+  }
+}

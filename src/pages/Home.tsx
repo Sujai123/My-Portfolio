@@ -1,63 +1,38 @@
 import HeroContent from '../features/Home/HeroContent'
-import Details from '../features/Home/Details'
-import { createUseStyles } from 'react-jss'
 import AboutMe from '../features/Home/AboutMe'
 import Skills from '../features/Home/Skills'
 import Contributions from '../features/Home/Contributions'
 import WorkExperience from '../features/Home/WorkExperience'
 import EducationalInfo from '../features/Home/EducationalInfo'
 import Contact from '../features/Home/Contact'
-import PortfolioDetails from '../components/Layouts/PortfolioDetails'
-
-const useStyles = createUseStyles({
-  homeContainer: {
-    position: 'relative'
-  },
-  home__heroContent: {
-    height: "100vh",
-    position: "relative",
-  },
-  home__detailContent: {
-    height: "100vh",
-    position: "relative"
-  },
-  layout: {
-
-  }
-})
+import BaseLayout from '../components/Layouts/BaseLayout'
 
 const Home = () => {
-  const styles = useStyles();
 
   return (
-    <div className={styles.homeContainer}>
-      <div className={styles.home__heroContent}>
+    <BaseLayout>
+      <div>
         <HeroContent />
       </div>
-      {/* <div className={styles.home__heroContent}> */}
-        {/* <Details /> */}
-      {/* </div> */}
-      {/* <PortfolioDetails> */}
-        <div className={styles.home__detailContent}>
+        <div>
           <AboutMe />
         </div>
-        <div className={styles.home__detailContent}>
+        <div>
           <Skills />
         </div>
-        <div className={styles.home__detailContent}>
+        <div>
           <Contributions />
         </div>
-        <div className={styles.home__detailContent}>
+        <div>
           <WorkExperience />
         </div>
-        <div className={styles.home__detailContent}>
+        <div>
           <EducationalInfo />
         </div>
-        <div className={styles.home__detailContent}>
+        <div>
           <Contact />
         </div>
-      {/* </PortfolioDetails> */}
-    </div>
+    </BaseLayout>
   )
 }
 

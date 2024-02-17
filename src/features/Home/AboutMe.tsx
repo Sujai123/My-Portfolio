@@ -1,29 +1,14 @@
-import { createUseStyles } from "react-jss"
-import Heading1 from "../../components/Heading1"
-import Typography from "../../components/Typography"
-
-const useStyles = createUseStyles({
-  container: {
-    padding: "1rem",
-    height: "100%",
-    display: 'flex',
-    flexDirection: "column",
-    justifyContent: "center",
-    marginLeft: "5rem",
-    maxWidth: "90em"
-  }
-})
+import Text from "../../components/Text"
 
 const AboutMe = () => {
-  const styles = useStyles();
   return (
-    <div className={styles.container}>
-      <Heading1>
+    <div className="sb-layout">
+      <Text variant="h1">
           About Me
-      </Heading1>
-      <Typography>
+      </Text>
+      <Text>
         Passionate about crafting seamless web experiences, I bring concepts to life with elegant UIs and robust backends. Let's turn your ideas into digital marvels! 💻✨
-      </Typography>
+      </Text>
     </div>
   )
 }

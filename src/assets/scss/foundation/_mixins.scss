@@ -1,0 +1,24 @@
+@mixin padding($space) {
+  padding: map-get($spacing, $space);
+}
+
+@mixin padding-block($space) {
+  padding: map-get($spacing, $space);
+}
+
+@mixin padding-inline($space) {
+  padding-inline: map-get($spacing, $space);
+}
+
+@mixin border-radius($space) {
+  border-radius: map-get($spacing, $space);
+}
+
+@mixin gap($space) {
+  gap: map-get($spacing, $space);
+}
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+}
