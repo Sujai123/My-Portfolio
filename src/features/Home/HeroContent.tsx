@@ -1,28 +1,21 @@
-import Button from '../../components/Button'
-import Heading1 from '../../components/Heading1'
-import { createUseStyles } from 'react-jss'
-
-const useStyles = createUseStyles({
-  heroContentContainer: {
-    position: "absolute",
-    width: '80%',
-    bottom: '20%',
-    left: '10%',
-    "& > div": {
-      marginTop: '2rem',
-    }
-  }
-})
+import Button from "../../components/Button";
+import Text from "../../components/Text.js";
 
 const HeroContent = () => {
-  const styles = useStyles()
   return (
-    <div className={styles.heroContentContainer}>
-      <Heading1>Hello There!</Heading1>
-      <Heading1>This is Sujai Beniks</Heading1>
-      <Button label="Let's Go" />
-    </div>
-  )
-}
+    <>
+      <div className="sb-layout">
+        <Text variant="h1">Hello There!</Text>
+        <Text variant="h1">This is Sujai Beniks</Text>
+        <Button label="Let's Go" />
+      </div>
+      <div>
+        {/* <BoySVG />
+        <GrassSVG /> */}
+        {/* <MountainSVG /> */}
+      </div>
+    </>
+  );
+};
 
-export default HeroContent
+export default HeroContent;

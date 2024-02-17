@@ -1,98 +1,40 @@
-import { createUseStyles } from "react-jss"
-import Heading1 from "../../components/Heading1"
-import FacebookIcon from '../../assets/images/facebook.png'
-import InstagramIcon from '../../assets/images/instagram.jpeg'
-import LinkedInIcon from '../../assets/images/linkedin.png'
-import GithubIcon from '../../assets/images/github.png'
-import Heading3 from "../../components/Heading3"
-import Typography from "../../components/Typography"
-
-const useStyles = createUseStyles({
-  container: {
-    padding: "1rem",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    marginLeft: "5rem",
-  },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 5em)",
-    gridTemplateRows: "5em",
-    gap: "1rem",
-    "& > div": {
-      backgroundColor: "rgba(217, 217, 217, .2)",
-      borderRadius: '1em',
-      "& > img": {
-        borderRadius: '1em',
-      }
-    }
-  }
-})
+import Text from "../../components/Text";
 
 const Contact = () => {
-  const styles = useStyles();
   return (
-    <div className={styles.container}>
-      <Heading1>
-          Contact
-      </Heading1>
+    <div className="sb-layout">
+      <Text variant="h1">Contact</Text>
       <div>
-        <Heading3>
-          Email
-        </Heading3>
-        <Typography>
-          sujaibeniks001@gmail.com
-        </Typography>
+        <Text variant="h3">Email</Text>
+        <Text>sujaibeniks001@gmail.com</Text>
       </div>
 
       <div>
-        <Heading3>
-          Mobile
-        </Heading3>
-        <Typography>
-          8220752490
-        </Typography>
+        <Text variant="h3">Mobile</Text>
+        <Text>8220752490</Text>
       </div>
 
       <div>
-        <Heading3>
-          Facebook
-        </Heading3>
-        <Typography>
-        https://m.facebook.com/sujai.beniks.5
-        </Typography>
+        <Text variant="h3">Facebook</Text>
+        <Text>https://m.facebook.com/sujai.beniks.5</Text>
       </div>
 
       <div>
-        <Heading3>
-          Instagram
-        </Heading3>
-        <Typography>
-        https://www.instagram.com/__silent___eyes____/
-        </Typography>
+        <Text variant="h3">Instagram</Text>
+        <Text>https://www.instagram.com/__silent___eyes____/</Text>
       </div>
 
       <div>
-        <Heading3>
-          Linked In
-        </Heading3>
-        <Typography>
-        https://www.linkedin.com/mwlite/in/sujai-beniks-j-89693616b
-        </Typography>
+        <Text variant="h3">Linked In</Text>
+        <Text>https://www.linkedin.com/mwlite/in/sujai-beniks-j-89693616b</Text>
       </div>
 
       <div>
-        <Heading3>
-          Github
-        </Heading3>
-        <Typography>
-        https://github.com/Sujai123/
-        </Typography>
+        <Text variant="h3">Github</Text>
+        <Text>https://github.com/Sujai123/</Text>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

@@ -26,7 +26,7 @@ const useStyles = createUseStyles({
 const Details = () => {
   const styles = useStyles();
   return (
-    <div className={styles.detailsContainer}>
+    <div className="sb-layout">
       <div></div>
       <div></div>
       <div className={styles.mySkills}></div>

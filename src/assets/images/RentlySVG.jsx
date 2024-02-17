@@ -1,4 +1,4 @@
-export default () => {
+const RentlySVG = () => {
   return (
     <svg
       width="26"
@@ -14,3 +14,5 @@ export default () => {
     </svg>
   );
 };
+
+export default RentlySVG;

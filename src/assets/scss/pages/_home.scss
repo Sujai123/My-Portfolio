@@ -1,0 +1,8 @@
+.sb-base-layout {
+  position: relative;
+
+  & > div {
+    height: 100vh;
+    position: relative;
+  }
+}

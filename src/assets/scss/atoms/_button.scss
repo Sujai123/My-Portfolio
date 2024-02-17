@@ -1,0 +1,10 @@
+.sb-button {
+  display: inline-block;
+  font-family: $body-font-family;
+  text-decoration: none;
+  color: $text-primary;
+  @include padding-block('md');
+  @include padding-inline('xxl');
+  @include border-radius('xxl');
+  background-color: $primary-background;
+}
