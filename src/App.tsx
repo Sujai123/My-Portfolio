@@ -3,10 +3,12 @@ import Home from "./pages/Home";
 
 import useSmoothScroll from "./hooks/useSmoothScroll";
 import useInitChartJS from "./hooks/useInitChartJS";
+import useRegisterGSapScrollTrigger from "./hooks/useRegisterGSapScrollTrigger";
 
 function App() {
-  useSmoothScroll();
-  useInitChartJS();
+  // useSmoothScroll();
+  // useInitChartJS();
+  // useRegisterGSapScrollTrigger();
 
   return (
     <>

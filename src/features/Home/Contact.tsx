@@ -19,10 +19,10 @@ const Contact = () => {
         <Text>https://m.facebook.com/sujai.beniks.5</Text>
       </div>
 
-      <div>
+      {/* <div>
         <Text variant="h3">Instagram</Text>
         <Text>https://www.instagram.com/__silent___eyes____/</Text>
-      </div>
+      </div> */}
 
       <div>
         <Text variant="h3">Linked In</Text>
