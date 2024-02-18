@@ -3,7 +3,7 @@ import Text from "../../components/Text";
 
 const Skills = () => {
   return (
-    <div className="sb-layout">
+    <div className="sb-layout skills">
       <Text variant="h1">Area of Interest | Skills</Text>
       <div>
         <Text variant="h3">
