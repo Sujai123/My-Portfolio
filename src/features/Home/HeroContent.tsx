@@ -6,6 +6,7 @@ import GrassSVG from '../../assets/images/GrassSVG.jsx';
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TypeWriter from "../../components/TypeWriter.js";
 
 const HeroContent = () => {
   // useEffect(() => {
@@ -20,15 +21,19 @@ const HeroContent = () => {
     <>
       <div className="sb-layout">
         <div>
-          <Text variant="h1">Hello There!</Text>
-          <Text variant="h1">This is Sujai Beniks</Text>
+          <div className="hero-content__main">
+            <Text variant="h1">Hello There!</Text>
+            <Text variant="h1">
+              <TypeWriter />
+            </Text>
+          </div>
           <Button label="Let's Go" />
         </div>
-        <div>
+        {/* <div>
           <BoySVG className="boy-svg" />
           <GrassSVG className="grass-svg" />
           <MountainSVG className="mountain-svg" />
-        </div>
+        </div> */}
       </div>
     </>
   );

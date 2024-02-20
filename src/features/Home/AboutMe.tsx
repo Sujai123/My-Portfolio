@@ -2,7 +2,7 @@ import Text from "../../components/Text"
 
 const AboutMe = () => {
   return (
-    <div className="sb-layout about-me">
+    <div className="sb-layout">
       <Text variant="h1">
           About Me
       </Text>

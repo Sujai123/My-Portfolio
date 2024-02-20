@@ -1,3 +1,7 @@
+@mixin margin-block($space) {
+  margin-block: map-get($spacing, $space);
+}
+
 @mixin padding($space) {
   padding: map-get($spacing, $space);
 }
