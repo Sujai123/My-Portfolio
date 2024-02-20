@@ -15,7 +15,7 @@ const Skills = () => {
           <Pills label="React" />
         </div>
         <Text>
-          Having around 4 years of experience working on react js technology across various libraries.
+          Having around 3 years of experience working on react js technology across various libraries.
         </Text>
       </div>
 
@@ -51,6 +51,7 @@ const Skills = () => {
         <div className='sb-skills__pills'>
         <Pills label="Figma" />
         <Pills label="Inkscape" />
+        <Pills label="Blender" />
         </div>
         <Text>
           Out of enthusiasm, I've tried using Web designing tools.

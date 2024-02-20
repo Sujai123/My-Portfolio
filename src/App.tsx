@@ -6,7 +6,7 @@ import useInitChartJS from "./hooks/useInitChartJS";
 import useRegisterGSapScrollTrigger from "./hooks/useRegisterGSapScrollTrigger";
 
 function App() {
-  // useSmoothScroll();
+  useSmoothScroll();
   // useInitChartJS();
   // useRegisterGSapScrollTrigger();
 
