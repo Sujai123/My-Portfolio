@@ -1,21 +1,18 @@
 import Button from "../../components/Button";
 import Text from "../../components/Text.js";
-import MountainSVG from "../../assets/images/MountainSVG.jsx";
-import BoySVG from '../../assets/images/BoySVG.jsx';
-import GrassSVG from '../../assets/images/GrassSVG.jsx';
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TypeWriter from "../../components/TypeWriter.js";
+import mountainMobileImg from '../../assets/images/mountain-mobile.jpg'
+import mountainDesktopImg from '../../assets/images/mountain-desktop.jpg'
 
 const HeroContent = () => {
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   gsap.to(".boy-svg", {
-  //     scrollTrigger: ".about-me",
-  //     y: -100,
-  //   });
-  // }, [])
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <>
@@ -27,13 +24,14 @@ const HeroContent = () => {
               <TypeWriter />
             </Text>
           </div>
-          <Button label="Let's Go" />
+          <Button label="Let's Go" onClick={handleClick} />
         </div>
-        {/* <div>
-          <BoySVG className="boy-svg" />
-          <GrassSVG className="grass-svg" />
-          <MountainSVG className="mountain-svg" />
-        </div> */}
+        <div className="hero-content__images">
+          <picture>
+            <source media="(min-width:650px)" srcSet={mountainDesktopImg} />
+            <img src={mountainMobileImg} alt="Mountain" />
+          </picture>
+        </div>
       </div>
     </>
   );
