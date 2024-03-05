@@ -11,73 +11,29 @@
   background-color: rgba($color: #ffffff, $alpha: 0.5);
   z-index: 100;
   color: $accent-violet;
-  // padding: 1em;
   position: fixed !important;
   height: 6rem !important;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // padding: 5em;
   aspect-ratio: 1;
   bottom: 5%;
   right: 5%;
   cursor: pointer;
-  padding: 1em;
+  @include flex-center;
+  @include padding('md')
 }
 
-// .mountain-svg {
-//   position: absolute;
-//   max-width: 100%;
-//   bottom: -5rem;
-//   left: 0;
-//   background-image: linear-gradient(
-//     transparent 75%, 
-//     $accent-violet 75%, 
-//     $accent-violet
-//   );
-//   // box-shadow: 0 5rem 15rem rgba($color: $accent-violet, $alpha: 1.0);
-//   // z-index: -1;
-// }
+.hero-content__images {
 
-// .boy-svg {
-//   position: absolute;
-//   max-width: 100%;
-//   bottom: 2rem;
-//   right: 20rem;
-//   background-image: linear-gradient(
-//     transparent 75%, 
-//     $accent-violet 75%, 
-//     $accent-violet
-//   );
-//   // z-index: -1;
-// }
-
-// .grass-svg {
-//   position: absolute;
-//   max-width: 100%;
-//   bottom: -5rem;
-//   left: 0;
-//   background-image: linear-gradient(
-//     transparent 75%, 
-//     $accent-violet 75%, 
-//     $accent-violet
-//   );
-//   // z-index: -1;
-// }
-
-// .mountain-svg, .boy-svg, .grass-svg {
-//   display: none;
-// }
-
-// @include tablet {
-//   .mountain-svg, .boy-svg, .grass-svg {
-//     display: initial;
-//   }
-// }
-
-// @include desktop {
-//   .mountain-svg, .boy-svg, .grass-svg {
-//     display: none;
-//   }
-// }
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom;
+    filter: blur(.02em);
+    box-shadow: 0 5em 10em rgba($color: #000, $alpha: 0.5);
+  }
+}
