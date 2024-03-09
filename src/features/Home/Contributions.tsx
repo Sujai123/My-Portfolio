@@ -1,39 +1,21 @@
-import Text from "../../components/Text.js"
+import Box from "../../components/Box.js";
+import HomeSectionLayout from "../../components/Layouts/HomeSectionLayout.js";
+import Text from "../../components/Text.js";
+import contributionsConstant from "../../constants/contributions.js";
 
 const Contributions = () => {
+  const { title, contributions } = contributionsConstant;
   return (
-    <div className="sb-layout">
-      <Text variant="h1">
-          Contributions
-      </Text>
-      <div>
-        <Text variant="h3">
-          IcodeThis
-        </Text>
-        <Text>
-          Completed around 17 challenges in icodeThis Platform
-        </Text>
-      </div>
+    <HomeSectionLayout>
+      <Text variant="h1">{title}</Text>
+      {contributions.map((contribution) => (
+        <Box key={contribution.title}>
+          <Text variant="h3">{contribution.title}</Text>
+          <Text>{contribution.description}</Text>
+        </Box>
+      ))}
+    </HomeSectionLayout>
+  );
+};
 
-      <div>
-        <Text variant="h3">
-          CodePen
-        </Text>
-        <Text>
-        Developed around 10 mini projects in CodePen Platform
-        </Text>
-      </div>
-
-      <div>
-        <Text variant="h3">
-          CodeSandBox
-        </Text>
-        <Text>
-          Developed few mini projects in CodeSandbox Platform
-        </Text>
-      </div>
-    </div>
-  )
-}
-
-export default Contributions
+export default Contributions;

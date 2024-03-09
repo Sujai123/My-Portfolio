@@ -1,0 +1,4 @@
+@mixin box-shadow($space) {
+  $value: map-get($spacing, $space);
+  box-shadow: 0 $value $value * 2 rgba($color: #000, $alpha: 0.5);
+}

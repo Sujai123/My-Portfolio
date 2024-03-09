@@ -1,10 +1,14 @@
 import Button from "../../components/Button";
 import Text from "../../components/Text.js";
 import TypeWriter from "../../components/TypeWriter.js";
-import mountainMobileImg from '../../assets/images/mountain-mobile.jpg'
-import mountainDesktopImg from '../../assets/images/mountain-desktop.jpg'
+import HomeSectionLayout from "../../components/Layouts/HomeSectionLayout.js";
+import Box from "../../components/Box.js";
+import heroContent from "../../constants/heroContent.js";
+import Image from "../../components/Image.js";
 
 const HeroContent = () => {
+
+  const { title, typeWriterTitle } = heroContent;
 
   const handleClick = () => {
     window.scrollTo({
@@ -16,23 +20,18 @@ const HeroContent = () => {
 
   return (
     <>
-      <div className="sb-layout">
-        <div>
-          <div className="hero-content__main">
-            <Text variant="h1">Hello There!</Text>
+      <HomeSectionLayout>
+        <Box>
+          <Box marginBlock="md">
+            <Text variant="h1">{title}</Text>
             <Text variant="h1">
-              <TypeWriter />
+              <TypeWriter label={typeWriterTitle} />
             </Text>
-          </div>
+          </Box>
           <Button label="Let's Go" onClick={handleClick} />
-        </div>
-        <div className="hero-content__images">
-          <picture>
-            <source media="(min-width:650px)" srcSet={mountainDesktopImg} />
-            <img src={mountainMobileImg} alt="Mountain" />
-          </picture>
-        </div>
-      </div>
+        </Box>
+        <Image type="mountain-desktop" imageType="background" />
+      </HomeSectionLayout>
     </>
   );
 };

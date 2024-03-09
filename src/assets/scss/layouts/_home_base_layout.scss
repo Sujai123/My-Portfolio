@@ -1,0 +1,11 @@
+.home-base-layout {
+  position: relative;
+}
+
+.home-section-layout {
+  height: 100vh;
+  @include flex-column;
+  justify-content: center;
+  @include padding('sm');
+  @include padding-inline('xxxl');
+}

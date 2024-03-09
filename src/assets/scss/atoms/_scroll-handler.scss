@@ -1,0 +1,14 @@
+.scroll-handler__container {
+  background-color: rgba($color: #ffffff, $alpha: 0.5);
+  z-index: 100;
+  color: $accent-violet;
+  position: fixed !important;
+  height: 6rem !important;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  @include flex-center;
+  @include padding('md')
+}

@@ -1,9 +1,6 @@
 import "./app.scss";
 import Home from "./pages/Home";
-
 import useSmoothScroll from "./hooks/useSmoothScroll";
-import useInitChartJS from "./hooks/useInitChartJS";
-import useRegisterGSapScrollTrigger from "./hooks/useRegisterGSapScrollTrigger";
 
 function App() {
   useSmoothScroll();
@@ -12,9 +9,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <Home />
-      </div>
+      <Home />
     </>
   );
 }

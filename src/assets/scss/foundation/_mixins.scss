@@ -7,11 +7,15 @@
 }
 
 @mixin padding-block($space) {
-  padding: map-get($spacing, $space);
+  padding-block: map-get($spacing, $space);
 }
 
 @mixin padding-inline($space) {
   padding-inline: map-get($spacing, $space);
+}
+
+@mixin padding-left($space) {
+  padding-left: map-get($spacing, $space);
 }
 
 @mixin border-radius($space) {

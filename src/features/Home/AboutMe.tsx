@@ -1,15 +1,17 @@
+import HomeSectionLayout from "../../components/Layouts/HomeSectionLayout"
 import Text from "../../components/Text"
+import aboutMe from "../../constants/aboutMe"
 
 const AboutMe = () => {
   return (
-    <div className="sb-layout">
+    <HomeSectionLayout>
       <Text variant="h1">
-          About Me
+        {aboutMe.title}
       </Text>
       <Text>
-        Passionate about crafting seamless web experiences, I bring concepts to life with elegant UIs and robust backends. Let's turn your ideas into digital marvels! 💻✨
+        {aboutMe.description}
       </Text>
-    </div>
+    </HomeSectionLayout>
   )
 }
 

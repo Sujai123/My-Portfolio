@@ -9,7 +9,7 @@ type TextProps = {
 };
 
 const Text: React.FC<TextProps> = (props) => {
-  const { children, variant = "p", id, className: classNameProp } = props;
+  const { children, variant = "p", id, className: classNameProp = "" } = props;
   let className = classNameProp;
   switch (variant) {
     case "h1":
