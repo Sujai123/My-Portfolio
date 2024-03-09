@@ -12,7 +12,7 @@ const SkillDetails = (props: SkillsDetailsProps) => {
   const {title, pills, description} = props;
   return (
     <Box>
-      <Text variant="h3">{title}</Text>
+      <Text variant="lg">{title}</Text>
       <Pills
         label={pills}
       />

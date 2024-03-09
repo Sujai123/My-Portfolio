@@ -9,7 +9,7 @@ const WorkExperience = () => {
 
   return (
     <HomeSectionLayout>
-      <Text variant="h1">{title}</Text>
+      <Text variant="xl">{title}</Text>
       {experiences.map((experience) => (
         <Box key={experience.logo}>
           <Image type={experience.logo} />

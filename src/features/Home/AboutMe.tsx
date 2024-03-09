@@ -5,7 +5,7 @@ import aboutMe from "../../constants/aboutMe"
 const AboutMe = () => {
   return (
     <HomeSectionLayout>
-      <Text variant="h1">
+      <Text variant="xl">
         {aboutMe.title}
       </Text>
       <Text>

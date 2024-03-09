@@ -7,10 +7,10 @@ const Contributions = () => {
   const { title, contributions } = contributionsConstant;
   return (
     <HomeSectionLayout>
-      <Text variant="h1">{title}</Text>
+      <Text variant="xl">{title}</Text>
       {contributions.map((contribution) => (
         <Box key={contribution.title}>
-          <Text variant="h3">{contribution.title}</Text>
+          <Text variant="lg">{contribution.title}</Text>
           <Text>{contribution.description}</Text>
         </Box>
       ))}

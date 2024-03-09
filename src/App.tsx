@@ -4,8 +4,6 @@ import useSmoothScroll from "./hooks/useSmoothScroll";
 
 function App() {
   useSmoothScroll();
-  // useInitChartJS();
-  // useRegisterGSapScrollTrigger();
 
   return (
     <>

@@ -8,4 +8,5 @@
   justify-content: center;
   @include padding('sm');
   @include padding-inline('xxxl');
+  max-width: 50em;
 }

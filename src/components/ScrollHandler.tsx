@@ -10,7 +10,7 @@ const ScrollHandler = () => {
   };
   return (
     <div className="scroll-handler__container" onClick={scrollToTop}>
-      <Image type="up-arrow-svg" />
+      <Image type="computer-mouse" />
     </div>
   );
 };
