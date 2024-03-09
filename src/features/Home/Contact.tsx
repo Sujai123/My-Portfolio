@@ -8,10 +8,10 @@ const Contact = () => {
 
   return (
     <HomeSectionLayout>
-      <Text variant="h1">{title}</Text>
+      <Text variant="xl">{title}</Text>
       {details.map((detail) => (
         <Box key={detail.title}>
-          <Text variant="h3">{detail.title}</Text>
+          <Text variant="lg">{detail.title}</Text>
           <Text>{detail.value}</Text>
         </Box>
       ))}

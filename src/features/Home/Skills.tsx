@@ -7,7 +7,7 @@ const Skills = () => {
   const {title, skills} = skillsConstant;
   return (
     <HomeSectionLayout>
-      <Text variant="h1">{title}</Text>
+      <Text variant="xl">{title}</Text>
       {skills.map(skill => (
         <SkillDetails
           key={skill.title}

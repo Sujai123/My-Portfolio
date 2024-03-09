@@ -4,9 +4,9 @@
   left: 0;
   z-index: -1;
   width: 100vw;
-  height: 100vh;
+  height: 700vh;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
   filter: blur(.02em);
   @include box-shadow('xxxl');
 }
