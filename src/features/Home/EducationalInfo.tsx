@@ -1,32 +1,22 @@
+import Box from "../../components/Box";
+import HomeSectionLayout from "../../components/Layouts/HomeSectionLayout";
 import Text from "../../components/Text";
+import educationalInfoConstant from "../../constants/educationalInfo";
 
 const EducationalInfo = () => {
+  const { title, educationalInfo } = educationalInfoConstant;
   return (
-    <div className="sb-layout">
-      <Text variant="h1">EducationalInfo</Text>
-      <div>
-        <Text variant="h3">
-          Sri Shakthi Institute of Engineering and Technology
-        </Text>
-        <Text>2016 - 2020</Text>
-        <Text>BE Computer Science and Engineering</Text>
-        <Text>Secured 6.95 CGPA</Text>
-      </div>
-
-      <div>
-        <Text variant="h3">St.Josephs's Metric Hr Secondary School</Text>
-        <Text>2016</Text>
-        <Text>HSC</Text>
-        <Text>Secured 93.33%</Text>
-      </div>
-
-      <div>
-        <Text variant="h3">St.Josephs's Metric Hr Secondary School</Text>
-        <Text>2016</Text>
-        <Text>SSLC</Text>
-        <Text>Secured 93.40%</Text>
-      </div>
-    </div>
+    <HomeSectionLayout>
+      <Text variant="h1">{title}</Text>
+      {educationalInfo.map((detail) => (
+        <Box key={detail.course}>
+          <Text variant="h3">{detail.title}</Text>
+          <Text>{detail.year}</Text>
+          <Text>{detail.course}</Text>
+          <Text>{detail.grade}</Text>
+        </Box>
+      ))}
+    </HomeSectionLayout>
   );
 };
 

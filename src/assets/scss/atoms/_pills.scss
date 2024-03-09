@@ -1,4 +1,10 @@
-.sb-pills {
+.pills__container {
+  display: flex;
+  flex-wrap: wrap;
+  @include gap('md');
+}
+
+.pills__item {
   display: inline-block;
   background: $secondary-background;
   color: $text-secondary;

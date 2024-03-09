@@ -1,27 +1,24 @@
-import RentlySVG from '../../assets/images/RentlySVG'
-import Text from "../../components/Text.js"
+import Box from "../../components/Box";
+import Image from "../../components/Image";
+import HomeSectionLayout from "../../components/Layouts/HomeSectionLayout";
+import Text from "../../components/Text";
+import workExperience from "../../constants/workExperience";
 
 const WorkExperience = () => {
-  return (
-    <div className="sb-layout">
-      <Text variant="h1">
-          WorkExperience
-      </Text>
-      <div className='sb-experience__content'>
-        <div className="sb-experience__content__icon">
-          <RentlySVG />
-        </div>
-        <div>
-          <Text>Since 2020</Text>
-          <Text>
-            Working for about 4 years, currently playing the role of Senior Software Engineer, 
-            Worked on multiple modules building the client requirements with high quality responsive website along with unit testing.
-            One of my key contribution is integrating Single Sign On to the web application.
-          </Text>
-        </div>
-      </div>
-    </div>
-  )
-}
+  const { title, experiences } = workExperience;
 
-export default WorkExperience
+  return (
+    <HomeSectionLayout>
+      <Text variant="h1">{title}</Text>
+      {experiences.map((experience) => (
+        <Box key={experience.logo}>
+          <Image type={experience.logo} />
+          <Text>{experience.year}</Text>
+          <Text>{experience.description}</Text>
+        </Box>
+      ))}
+    </HomeSectionLayout>
+  );
+};
+
+export default WorkExperience;
