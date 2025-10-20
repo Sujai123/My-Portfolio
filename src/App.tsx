@@ -1,13 +1,12 @@
+import Button from '@common/Button';
 import './globals.css';
-import useSmoothScroll from "./hooks/useSmoothScroll";
+import useSmoothScroll from "@common/hooks/useSmoothScroll";
 
 function App() {
   useSmoothScroll();
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Button />
   );
 }
 
