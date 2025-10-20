@@ -1,5 +1,0 @@
-@each $space, $value in $spacing {
-  .box-margin-block-#{$space} {
-    @include margin-block($space)
-  }
-}

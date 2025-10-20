@@ -1,5 +1,3 @@
-import "./app.scss";
-import Home from "./pages/Home";
 import useSmoothScroll from "./hooks/useSmoothScroll";
 
 function App() {
@@ -7,7 +5,6 @@ function App() {
 
   return (
     <>
-      <Home />
     </>
   );
 }
