@@ -3,9 +3,9 @@ import "./globals.css";
 import useSmoothScroll from "@common/hooks/useSmoothScroll";
 
 function App() {
-	useSmoothScroll();
+  useSmoothScroll();
 
-	return <Button />;
+  return <Button />;
 }
 
 export default App;
