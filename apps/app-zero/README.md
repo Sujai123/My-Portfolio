@@ -1,0 +1,1 @@
+The first version of portfolio is hosted in https://sujai123.github.io/my-blog and witten in https://github.com/Sujai123/my-blog
