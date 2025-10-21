@@ -1,6 +1,6 @@
 import "./app.scss";
 import Home from "./pages/Home";
-import useSmoothScroll from "./hooks/useSmoothScroll";
+import { useSmoothScroll } from "@my-portfolio/hooks";
 
 function App() {
   useSmoothScroll();

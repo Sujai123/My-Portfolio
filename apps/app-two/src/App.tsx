@@ -1,6 +1,6 @@
-import Button from "@common/Button";
+import Button from "@common/components/Button";
 import "./globals.css";
-import useSmoothScroll from "@common/hooks/useSmoothScroll";
+import { useSmoothScroll } from "@my-portfolio/hooks";
 
 function App() {
   useSmoothScroll();
