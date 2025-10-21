@@ -1,0 +1,31 @@
+{
+	"name": "app-two",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"lint": "npx @biomejs/biome check --write",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@studio-freight/lenis": "^1.0.34",
+		"@tailwindcss/postcss": "^4.1.14",
+		"motion": "^12.23.24",
+		"path": "^0.12.7",
+		"postcss": "^8.5.6",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-type-animation": "^3.2.0",
+		"tailwindcss": "^4.1.14"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.6",
+		"@types/react": "^18.2.43",
+		"@types/react-dom": "^18.2.17",
+		"@vitejs/plugin-react": "^4.2.1",
+		"typescript": "^5.2.2",
+		"vite": "^5.0.8"
+	}
+}
