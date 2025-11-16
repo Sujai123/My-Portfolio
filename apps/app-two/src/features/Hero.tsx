@@ -1,8 +1,8 @@
 import { hero } from "@constants/portfolio";
-import HeroLayout from "@layouts/HeroLayout";
+import FullScreen from "@layouts/FullScreen";
 
 const About = () => {
-	return <HeroLayout>{hero}</HeroLayout>;
+  return <FullScreen>{hero}</FullScreen>;
 };
 
 export default About;
