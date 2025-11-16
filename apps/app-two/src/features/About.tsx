@@ -1,11 +1,11 @@
 import { about } from '@constants/portfolio'
-import HeroLayout from '@layouts/HeroLayout'
+import FullScreen from '@layouts/FullScreen'
 
 const About = () => {
   return (
-    <HeroLayout>
+    <FullScreen>
       {about}
-    </HeroLayout>
+    </FullScreen>
   )
 }
 
