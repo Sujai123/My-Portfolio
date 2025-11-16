@@ -1,11 +1,11 @@
 import Hero from "@features/Hero";
 import "./globals.css";
-import { useSmoothScroll } from "@my-portfolio/hooks";
 import About from "@features/About";
+import Contact from "@features/Contact";
+import ContinuousLearning from "@features/ContinuousLearning";
 import Experience from "@features/Experience";
 import Projects from "@features/Projects";
-import ContinuousLearning from "@features/ContinuousLearning";
-import Contact from "@features/Contact";
+import { useSmoothScroll } from "@my-portfolio/hooks";
 
 function App() {
   useSmoothScroll();
@@ -19,7 +19,7 @@ function App() {
       <ContinuousLearning />
       <Contact />
     </>
-  )
+  );
 }
 
 export default App;

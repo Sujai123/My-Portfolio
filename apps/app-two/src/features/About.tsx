@@ -1,12 +1,8 @@
-import { about } from '@constants/portfolio'
-import FullScreen from '@layouts/FullScreen'
+import { about } from "@constants/portfolio";
+import FullScreen from "@layouts/FullScreen";
 
 const About = () => {
-  return (
-    <FullScreen>
-      {about}
-    </FullScreen>
-  )
-}
+  return <FullScreen>{about}</FullScreen>;
+};
 
-export default About
+export default About;

@@ -1,10 +1,7 @@
-import React from 'react'
 import FullScreen from "@layouts/FullScreen";
 
 const Contact = () => {
-  return (
-    <FullScreen>Contact</FullScreen>
-  )
-}
+  return <FullScreen>Contact</FullScreen>;
+};
 
-export default Contact
+export default Contact;

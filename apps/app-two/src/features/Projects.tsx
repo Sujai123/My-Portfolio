@@ -1,10 +1,7 @@
-import React from 'react'
-import FullScreen from '@layouts/FullScreen'
+import FullScreen from "@layouts/FullScreen";
 
 const Projects = () => {
-  return (
-    <FullScreen>Projects</FullScreen>
-  )
-}
+  return <FullScreen>Projects</FullScreen>;
+};
 
-export default Projects
+export default Projects;

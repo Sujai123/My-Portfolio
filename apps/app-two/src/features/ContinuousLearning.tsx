@@ -1,10 +1,7 @@
-import React from 'react'
-import FullScreen from '@layouts/FullScreen'
+import FullScreen from "@layouts/FullScreen";
 
 const ContinuousLearning = () => {
-  return (
-    <FullScreen>ContinuousLearning</FullScreen>
-  )
-}
+  return <FullScreen>ContinuousLearning</FullScreen>;
+};
 
-export default ContinuousLearning
+export default ContinuousLearning;
