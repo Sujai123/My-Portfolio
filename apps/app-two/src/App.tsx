@@ -6,19 +6,21 @@ import ContinuousLearning from "@features/ContinuousLearning";
 import Experience from "@features/Experience";
 import Projects from "@features/Projects";
 import { useSmoothScroll } from "@my-portfolio/hooks";
+import NavBar from "@layouts/NavBar";
 
 function App() {
   useSmoothScroll();
 
   return (
-    <>
+    <div>
+      <NavBar />
       <Hero />
       <About />
       <Experience />
       <Projects />
       <ContinuousLearning />
       <Contact />
-    </>
+    </div>
   );
 }
 
