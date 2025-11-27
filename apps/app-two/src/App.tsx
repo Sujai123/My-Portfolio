@@ -8,6 +8,7 @@ import Projects from "@features/Projects";
 import { useSmoothScroll } from "@my-portfolio/hooks";
 import NavBar from "@layouts/NavBar";
 
+// test commit
 function App() {
   useSmoothScroll();
 
