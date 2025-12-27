@@ -1,12 +1,35 @@
-import React from 'react'
 
-const NavBar = () => {
+import { useEffect, useState } from 'react'
+
+const NavBar = (props) => {
+  const { data } = props;
+
+  const [active, setActive] = useState("hero");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // 60% visible
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <ul className='fixed left-1/2 -translate-x-1/2 top-10 px-10 py-4 rounded-full flex gap-3 shadow-lg'>
-      <li>Home</li>
-      <li>About</li>
-      <li>Experience</li>
-      <li>Projects</li>
+    <ul className='overflow-hidden fixed left-1/2 -translate-x-1/2 top-10 rounded-full flex border border-gray-300 shadow-lg bg-white'>
+      {data.map((item, index) => (
+        <li className={`px-4 py-2 cursor-pointer hover:bg-gray-200 ${active === item.id ? 'bg-gray-200' : ''}`} key={index} onClick={() => {item.ref.current.scrollIntoView({ behavior: 'smooth' })}}>{item.title}</li>
+      ))}
     </ul>
   )
 }
