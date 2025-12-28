@@ -10,7 +10,7 @@ const Hero = () => {
           <AnimatedText text="Sujai Beniks J" el="span" />
         </h1>
         <p className="mt-4 text-lg md:text-2xl text-foreground/80">
-          <AnimatedText text="Creative Software Engineer" />
+          <AnimatedText text="Software Engineer" />
         </p>
       </div>
       <div className="w-full md:w-1/2 h-96 md:h-auto mt-10 md:mt-0">
