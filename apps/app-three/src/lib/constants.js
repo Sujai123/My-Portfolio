@@ -10,7 +10,7 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJsSquare,
-  FaRainbow,
+  FaGem,
 } from "react-icons/fa";
 import { SiCodepen, SiCodesandbox } from "react-icons/si";
 
@@ -108,7 +108,7 @@ export const SKILLS = {
   ],
   backend: [
     { name: "Ruby on Rails", icon: FaServer },
-    { name: "Ruby", icon: FaRainbow },
+    { name: "Ruby", icon: FaGem },
   ],
   database: [
     { name: "Postgres", icon: FaDatabase },
