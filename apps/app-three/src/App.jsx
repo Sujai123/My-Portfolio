@@ -7,8 +7,10 @@ import Skills from "./components/Skills";
 import Contributions from "./components/Contributions";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { useSmoothScroll } from "@my-portfolio/hooks";
 
 function App() {
+  useSmoothScroll();
   return (
     <>
       <Header />
