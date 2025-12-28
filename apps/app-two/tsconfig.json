@@ -24,7 +24,8 @@
 			"@common/*": ["src/common/*"],
 			"@features/*": ["src/features/*"],
 			"@layouts/*": ["src/layouts/*"],
-			"@constants/*": ["src/constants/*"]
+			"@constants/*": ["src/constants/*"],
+			"@utils/*": ["src/utils/*"]
 		}
 	},
 	"include": ["src"],
