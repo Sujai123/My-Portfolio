@@ -10,9 +10,9 @@ const Contact = () => {
         <AnimatedText
           text="Let's Connect"
           el="h2"
-          className="text-3xl font-bold mb-4"
+          className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#00ff7f] to-[#00e5ff]"
         />
-        <p className="text-foreground/80 mb-8">
+        <p className="text-slate-300 font-light text-lg mb-8">
           Feel free to reach out for collaborations or just a friendly chat.
         </p>
         <a
