@@ -41,7 +41,7 @@ const Projects = () => {
             target="_blank"
             rel="noopener noreferrer"
             variants={item}
-            className="block p-6 border border-white/10 rounded-xl bg-white/5 backdrop-blur-md hover:bg-white/10 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(0,255,127,0.2)]"
+            className="block p-6 border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors group"
           >
             <h3 className="text-xl font-bold mb-2">{project.name}</h3>
             <p className="text-foreground/80 mb-4">{project.description}</p>
