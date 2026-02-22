@@ -63,11 +63,6 @@ export const PROFESSIONAL_EXPERIENCE = [
 
 export const PERSONAL_PROJECTS = [
   {
-    name: "shopdotco",
-    href: "https://shopdotco.netlify.app/",
-    description: "A fully functional e-commerce platform boasting a modern UI built with React, TypeScript, and Material UI. It features a seamless shopping experience and responsive design.",
-  },
-  {
     name: "Personal Portfolio",
     href: "https://tourmaline-zuccutto-5739fe.netlify.app/",
     description: "Responsive portfolio built using React and TypeScript. I plan to enhance this for more engagement.",

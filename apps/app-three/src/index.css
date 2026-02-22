@@ -4,23 +4,15 @@
 
 @layer base {
   :root {
-    --background: 235 24% 8%;
-    /* Very dark, rich indigo/blue base */
-    --foreground: 0 0% 100%;
-    --primary: 151 100% 50%;
-    /* Vibrant neon green (Spring Green) */
-    --primary-foreground: 235 24% 8%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
   }
 
   body {
     @apply bg-background text-foreground;
-    background-color: hsl(var(--background));
-    /* Modern, deep mesh gradient background */
-    background-image:
-      radial-gradient(at 0% 0%, rgba(0, 255, 127, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(0, 229, 255, 0.1) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(0, 255, 127, 0.15) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(0, 229, 255, 0.1) 0px, transparent 50%);
-    background-attachment: fixed;
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--foreground) / 0.1) 1px, transparent 0);
+    background-size: 2rem 2rem;
   }
 }

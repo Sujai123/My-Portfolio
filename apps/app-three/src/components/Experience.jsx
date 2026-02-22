@@ -37,7 +37,7 @@ const Experience = () => {
           <motion.div
             key={index}
             variants={item}
-            className="p-6 border border-white/10 rounded-xl bg-white/5 backdrop-blur-md hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,127,0.2)] relative overflow-hidden group"
+            className="p-6 border border-primary/20 rounded-lg hover:shadow-lg hover:shadow-primary/10 transition-shadow"
           >
             <div className="flex justify-between items-start">
               <div>
