@@ -9,11 +9,13 @@ import {
   Mail,
   MapPin,
   Menu,
+  Moon,
   Sparkles,
+  Sun,
   X,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 
 const MotionDiv = motion.div;
 const MotionSection = motion.section;
@@ -114,9 +116,27 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const themeStorageKey = "app-four-theme";
+
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem(themeStorageKey);
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 function App() {
   const [activeSection, setActiveSection] = useState("about");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useLayoutEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem(themeStorageKey, theme);
+  }, [theme]);
 
   useEffect(() => {
     const sections = navItems
@@ -150,6 +170,10 @@ function App() {
         menuOpen={menuOpen}
         onMenuToggle={() => setMenuOpen((open) => !open)}
         onNavigate={scrollTo}
+        onThemeToggle={() =>
+          setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))
+        }
+        theme={theme}
       />
       <main>
         <Hero onViewWork={() => scrollTo("projects")} onContact={() => scrollTo("contact")} />
@@ -163,7 +187,9 @@ function App() {
   );
 }
 
-function Header({ activeSection, menuOpen, onMenuToggle, onNavigate }) {
+function Header({ activeSection, menuOpen, onMenuToggle, onNavigate, onThemeToggle, theme }) {
+  const nextTheme = theme === "dark" ? "light" : "dark";
+
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Sujai Beniks J home">
@@ -187,6 +213,15 @@ function Header({ activeSection, menuOpen, onMenuToggle, onNavigate }) {
         <Mail size={16} />
         Contact
       </a>
+
+      <button
+        className="theme-toggle"
+        type="button"
+        aria-label={`Switch to ${nextTheme} mode`}
+        onClick={onThemeToggle}
+      >
+        {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+      </button>
 
       <button
         className="menu-button"
