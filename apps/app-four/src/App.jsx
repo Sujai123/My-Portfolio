@@ -27,11 +27,11 @@ const navItems = [
   { label: "Contact", id: "contact" },
 ];
 
-const proofChips = ["6+ years", "React", "Rails", "Product UI", "Mentoring"];
+const proofChips = ["6+ years", "React", "Rails", "Product UI", "AI productivity"];
 
 const impactStats = [
   { value: "6+", label: "years building product software" },
-  { value: "SSO", label: "enterprise auth shipped with SAML" },
+  { value: "SSO", label: "Single Sign-On contribution" },
   { value: "Q2", label: "Best Team Player award recipient" },
 ];
 
@@ -42,11 +42,11 @@ const highlights = [
   },
   {
     title: "Full-stack delivery",
-    text: "React, Rails, and Postgres experience lets me reason from UI polish through API shape and data flow.",
+    text: "React, Rails, and PostgreSQL experience lets me reason from UI polish through API shape and data flow.",
   },
   {
-    title: "Calm technical leadership",
-    text: "I enjoy mentoring engineers, unblocking teams, and turning ambiguous work into practical releases.",
+    title: "AI-enhanced productivity",
+    text: "I use AI tools effectively to move faster, explore solutions, improve quality, and support day-to-day problem-solving.",
   },
 ];
 
@@ -54,52 +54,52 @@ const experience = [
   {
     role: "Software Engineer",
     company: "ProcureDesk",
-    period: "Dec 2025 - Current",
+    period: "Dec 2025 - Present",
     summary:
-      "Building full-stack product features across React, Ruby on Rails, and Postgres for procurement workflows.",
+      "Working as a full-stack developer with ReactJS on the frontend and Ruby on Rails with PostgreSQL on the backend.",
   },
   {
     role: "Associate Tech Lead",
     company: "Rently",
     period: "Aug 2019 - Nov 2025",
     summary:
-      "Led and contributed across enterprise web initiatives, including Azure SSO, installer workflow unification, mentoring, and Agile delivery.",
+      "Worked across multiple teams and Agile projects, contributed to Single Sign-On integration for the Manager Portal, and mentored junior developers.",
   },
 ];
 
 const projects = [
   {
-    title: "AI Agent Integration",
-    role: "Product UI",
-    outcome: "Designed renter-facing assistance flows that made AI guidance feel clear, responsive, and usable.",
-    tech: ["React", "UX Flow", "Product UI"],
+    title: "Personal Portfolio",
+    role: "React + TypeScript",
+    outcome: "Built a responsive portfolio and continue improving it to make the experience more engaging and useful.",
+    tech: ["React", "TypeScript", "Responsive UI"],
   },
   {
-    title: "Azure SSO Integration",
-    role: "Enterprise Auth",
-    outcome: "Implemented secure SAML-based login across React and Rails for a smoother enterprise sign-in path.",
-    tech: ["React", "Rails", "SAML", "Postgres"],
+    title: "Manager Portal Single Sign-On",
+    role: "Product Feature",
+    outcome: "Contributed to Single Sign-On integration for the Manager Portal, improving the sign-in experience for users.",
+    tech: ["React", "Rails", "Auth", "PostgreSQL"],
   },
   {
-    title: "Device Assignment Unification",
-    role: "Workflow Systems",
-    outcome: "Unified installer workflow logic so operational teams could move through device assignment with less friction.",
-    tech: ["Rails", "Postgres", "APIs"],
+    title: "Public UI Practice & Writing",
+    role: "Learning in public",
+    outcome: "Completed IcodeThis challenges, built mini projects on CodePen and CodeSandbox, and published engineering writing.",
+    tech: ["UI Challenges", "CodePen", "Blogs"],
   },
 ];
 
 const skills = [
   { group: "Frontend", items: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Material UI"] },
   { group: "Backend", items: ["Ruby", "Ruby on Rails", "REST APIs", "Auth flows"] },
-  { group: "Database", items: ["Postgres", "SQL", "Data modeling"] },
-  { group: "Tooling", items: ["Git", "Docker", "Jenkins", "AWS"] },
+  { group: "Database", items: ["PostgreSQL", "SQL", "Data modeling"] },
+  { group: "Productivity", items: ["AI tools", "Problem-solving", "Clean code", "Mentoring"] },
 ];
 
 const selectedImpact = [
   { icon: Award, text: "Best Team Player award for collaborative delivery and team reliability." },
   { icon: CheckCircle2, text: "Guided junior developers with training, review, and steady technical direction." },
-  { icon: BriefcaseBusiness, text: "Shipped enterprise SSO and workflow improvements across production systems." },
-  { icon: BookOpenText, text: "Published engineering writing and completed UI challenges across public platforms." },
+  { icon: BriefcaseBusiness, text: "Contributed to Single Sign-On integration for the Manager Portal." },
+  { icon: BookOpenText, text: "Published engineering writing and completed public UI challenges and mini projects." },
 ];
 
 const contact = {
@@ -232,14 +232,14 @@ function Hero({ onViewWork, onContact }) {
         >
           <p className="eyebrow">
             <Sparkles size={16} />
-            Full-stack engineer for thoughtful product interfaces
+            Full-stack engineer for clean, useful web applications
           </p>
           <h1 id="hero-title">
             Sujai Beniks J
           </h1>
           <p className="hero-lede">
-            Full-stack engineer building polished product experiences with React, Rails,
-            and thoughtful UI.
+            Full-stack engineer building practical, user-friendly web applications with React,
+            Ruby on Rails, PostgreSQL, and effective AI-assisted workflows.
           </p>
           <div className="hero-actions">
             <button className="button primary" type="button" onClick={onViewWork}>
@@ -346,9 +346,9 @@ function About() {
     <Section id="about" eyebrow="About" title="A product-minded engineer with a UI eye.">
       <div className="about-grid">
         <p className="about-lede">
-          I build web experiences that balance crisp interface craft with reliable full-stack
-          delivery. My strongest work sits where product clarity, frontend detail, and backend
-          systems need to meet without drama.
+          I build web experiences that balance pleasant UI, reliable full-stack delivery, and
+          clean maintainable code. I enjoy solving problems, learning continuously, and using
+          AI thoughtfully to improve productivity without losing engineering judgment.
         </p>
         <div className="highlight-grid">
           {highlights.map((item) => (
@@ -397,7 +397,7 @@ function Experience() {
 
 function Projects() {
   return (
-    <Section id="projects" eyebrow="Projects" title="Case-study style work with real product weight.">
+    <Section id="projects" eyebrow="Projects" title="Personal work, product features, and public learning.">
       <div className="project-grid">
         {projects.map((project, index) => (
           <MotionArticle
@@ -416,7 +416,7 @@ function Projects() {
               ))}
             </div>
             <span className="case-study-link">
-              Case study
+              View detail
               <ArrowUpRight size={16} />
             </span>
           </MotionArticle>
@@ -451,8 +451,8 @@ function Contact() {
       <div className="contact-panel">
         <div>
           <p>
-            I’m open to product engineering conversations, frontend-heavy full-stack work,
-            and teams that care about craft as much as delivery.
+            I’m interested in product engineering conversations, frontend-heavy full-stack work,
+            and teams that care about clean, practical, user-friendly software.
           </p>
           <div className="location">
             <MapPin size={18} />
