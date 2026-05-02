@@ -234,9 +234,9 @@ function Hero({ onViewWork, onContact }) {
             <Sparkles size={16} />
             Full-stack engineer for thoughtful product interfaces
           </p>
-          <h2 id="hero-title">
-            Sujai Beniks J builds polished web products from interface to backend.
-          </h2>
+          <h1 id="hero-title">
+            Sujai Beniks J
+          </h1>
           <p className="hero-lede">
             Full-stack engineer building polished product experiences with React, Rails,
             and thoughtful UI.
