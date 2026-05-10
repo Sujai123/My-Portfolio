@@ -1,6 +1,7 @@
 import {
   ArrowUpRight,
   Award,
+  Clock3,
   BookOpenText,
   BriefcaseBusiness,
   CheckCircle2,
@@ -15,7 +16,7 @@ import {
   X,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 const MotionDiv = motion.div;
 const MotionSection = motion.section;
@@ -32,9 +33,16 @@ const navItems = [
 const proofChips = ["6+ years", "React", "Rails", "Product UI", "AI productivity"];
 
 const impactStats = [
-  { value: "6+", label: "years building product software" },
-  { value: "SSO", label: "Single Sign-On contribution" },
-  { value: "Q2", label: "Best Team Player award recipient" },
+  { value: "6+", label: "years shipping product software" },
+  { value: "2019", label: "delivering production apps across teams" },
+  { value: "SSO", label: "contribution improving enterprise sign-in" },
+];
+
+const quickSnapshot = [
+  { label: "Role", value: "Frontend-heavy Full-Stack Engineer" },
+  { label: "Core stack", value: "React, Rails, PostgreSQL" },
+  { label: "Timezone", value: "IST (UTC+5:30)" },
+  { label: "Location", value: "Coimbatore, India" },
 ];
 
 const highlights = [
@@ -75,18 +83,32 @@ const projects = [
     role: "React + TypeScript",
     outcome: "Built a responsive portfolio and continue improving it to make the experience more engaging and useful.",
     tech: ["React", "TypeScript", "Responsive UI"],
+    href: "https://sujai-beniks-portfolio.netlify.app/",
+    cta: "View live site",
+  },
+  {
+    title: "Shopdotco",
+    role: "Ecommerce product",
+    outcome: "Built using React, TypeScript, and Material UI",
+    tech: ["React", "TypeScript", "Material UI", "Ecommerce"],
+    href: "https://shopdotco.netlify.app/",
+    cta: "View live site",
   },
   {
     title: "Manager Portal Single Sign-On",
     role: "Product Feature",
     outcome: "Contributed to Single Sign-On integration for the Manager Portal, improving the sign-in experience for users.",
     tech: ["React", "Rails", "Auth", "PostgreSQL"],
+    href: "https://www.rently.com/",
+    cta: "View product",
   },
   {
     title: "Public UI Practice & Writing",
     role: "Learning in public",
     outcome: "Completed IcodeThis challenges, built mini projects on CodePen and CodeSandbox, and published engineering writing.",
     tech: ["UI Challenges", "CodePen", "Blogs"],
+    href: "https://engineering.rently.com/discovering-the-stale-closure-trap-a-weird-bug/",
+    cta: "Read article",
   },
 ];
 
@@ -132,6 +154,7 @@ function App() {
   const [activeSection, setActiveSection] = useState("about");
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(getInitialTheme);
+  const menuButtonRef = useRef(null);
 
   useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -158,6 +181,25 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [menuOpen]);
+
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
@@ -168,6 +210,7 @@ function App() {
       <Header
         activeSection={activeSection}
         menuOpen={menuOpen}
+        menuButtonRef={menuButtonRef}
         onMenuToggle={() => setMenuOpen((open) => !open)}
         onNavigate={scrollTo}
         onThemeToggle={() =>
@@ -187,7 +230,7 @@ function App() {
   );
 }
 
-function Header({ activeSection, menuOpen, onMenuToggle, onNavigate, onThemeToggle, theme }) {
+function Header({ activeSection, menuOpen, menuButtonRef, onMenuToggle, onNavigate, onThemeToggle, theme }) {
   const nextTheme = theme === "dark" ? "light" : "dark";
 
   return (
@@ -203,6 +246,7 @@ function Header({ activeSection, menuOpen, onMenuToggle, onNavigate, onThemeTogg
             key={item.id}
             onClick={() => onNavigate(item.id)}
             type="button"
+            aria-current={activeSection === item.id ? "true" : undefined}
           >
             {item.label}
           </button>
@@ -226,21 +270,24 @@ function Header({ activeSection, menuOpen, onMenuToggle, onNavigate, onThemeTogg
       <button
         className="menu-button"
         type="button"
+        ref={menuButtonRef}
         aria-label="Toggle navigation"
         aria-expanded={menuOpen}
+        aria-controls="mobile-navigation"
         onClick={onMenuToggle}
       >
         {menuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
       {menuOpen && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
+        <nav className="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation">
           {navItems.map((item) => (
             <button
               className={activeSection === item.id ? "mobile-link active" : "mobile-link"}
               key={item.id}
               onClick={() => onNavigate(item.id)}
               type="button"
+              aria-current={activeSection === item.id ? "true" : undefined}
             >
               {item.label}
             </button>
@@ -267,15 +314,16 @@ function Hero({ onViewWork, onContact }) {
         >
           <p className="eyebrow">
             <Sparkles size={16} />
-            Full-stack engineer for clean, useful web applications
+            Product-focused engineer for clean, useful software
           </p>
           <h1 id="hero-title">
             Sujai Beniks J
           </h1>
           <p className="hero-lede">
-            Full-stack engineer building practical, user-friendly web applications with React,
-            Ruby on Rails, PostgreSQL, and effective AI-assisted workflows.
+            I design and build practical product interfaces with React, then carry them through
+            backend delivery with Rails and PostgreSQL.
           </p>
+          <p className="hero-proof">6+ years delivering user-facing features across product teams.</p>
           <div className="hero-actions">
             <button className="button primary" type="button" onClick={onViewWork}>
               View Work
@@ -290,6 +338,14 @@ function Hero({ onViewWork, onContact }) {
               <span key={chip}>{chip}</span>
             ))}
           </div>
+          <dl className="quick-snapshot" aria-label="Quick profile snapshot">
+            {quickSnapshot.map((item) => (
+              <div key={item.label}>
+                <dt>{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
         </MotionDiv>
 
         <MotionDiv
@@ -354,7 +410,7 @@ function HeroVisual() {
   );
 }
 
-function Section({ id, eyebrow, title, children, className = "" }) {
+function Section({ id, eyebrow, title, intro, children, className = "" }) {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -370,6 +426,7 @@ function Section({ id, eyebrow, title, children, className = "" }) {
       <div className="section-heading">
         <p>{eyebrow}</p>
         <h2>{title}</h2>
+        {intro ? <span>{intro}</span> : null}
       </div>
       {children}
     </MotionSection>
@@ -378,7 +435,12 @@ function Section({ id, eyebrow, title, children, className = "" }) {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About" title="A product-minded engineer with a UI eye.">
+    <Section
+      id="about"
+      eyebrow="About"
+      title="A product-minded engineer with a UI eye."
+      intro="I focus on shipping interfaces that are easy to scan, pleasant to use, and reliable in production."
+    >
       <div className="about-grid">
         <p className="about-lede">
           I build web experiences that balance pleasant UI, reliable full-stack delivery, and
@@ -400,7 +462,12 @@ function About() {
 
 function Experience() {
   return (
-    <Section id="experience" eyebrow="Experience" title="Built across teams, products, and systems.">
+    <Section
+      id="experience"
+      eyebrow="Experience"
+      title="Built across teams, products, and systems."
+      intro="From frontend polish to backend delivery, I contribute where product quality and execution speed matter."
+    >
       <div className="experience-layout">
         <div className="timeline">
           {experience.map((item) => (
@@ -432,7 +499,12 @@ function Experience() {
 
 function Projects() {
   return (
-    <Section id="projects" eyebrow="Projects" title="Personal work, product features, and public learning.">
+    <Section
+      id="projects"
+      eyebrow="Projects"
+      title="Personal work, product features, and public learning."
+      intro="A mix of shipped UI work, feature delivery, and learning-in-public outputs with practical outcomes."
+    >
       <div className="project-grid">
         {projects.map((project, index) => (
           <MotionArticle
@@ -450,10 +522,16 @@ function Projects() {
                 <span key={item}>{item}</span>
               ))}
             </div>
-            <span className="case-study-link">
-              View detail
+            <a
+              className="case-study-link"
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${project.cta} for ${project.title}`}
+            >
+              {project.cta}
               <ArrowUpRight size={16} />
-            </span>
+            </a>
           </MotionArticle>
         ))}
       </div>
@@ -463,7 +541,12 @@ function Projects() {
 
 function Skills() {
   return (
-    <Section id="skills" eyebrow="Skills" title="A practical toolkit for shipping polished products.">
+    <Section
+      id="skills"
+      eyebrow="Skills"
+      title="A practical toolkit for shipping polished products."
+      intro="Comfortable across frontend, backend, data, and team-level engineering responsibilities."
+    >
       <div className="skills-grid">
         {skills.map((group) => (
           <article className="skill-card" key={group.group}>
@@ -482,7 +565,12 @@ function Skills() {
 
 function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Let’s build something clear, useful, and sharp.">
+    <Section
+      id="contact"
+      eyebrow="Contact"
+      title="Let’s build something clear, useful, and sharp."
+      intro="Open to frontend-heavy full-stack roles, product engineering collaborations, and meaningful UI work."
+    >
       <div className="contact-panel">
         <div>
           <p>
@@ -493,6 +581,10 @@ function Contact() {
             <MapPin size={18} />
             {contact.location}
           </div>
+          <p className="contact-note">
+            <Clock3 size={18} />
+            Usually replies within 24-48 hours.
+          </p>
         </div>
         <div className="contact-actions">
           <a className="button primary" href={`mailto:${contact.email}`}>

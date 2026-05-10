@@ -31,6 +31,10 @@
 - Responsive portfolio built using React.
 - Includes several mini personal projects and experiments.
 
+### [Shopdotco](https://shopdotco.netlify.app/)
+- Ecommerce product.
+- Built using React, TypeScript, and Material UI.
+
 ---
 
 ## Contributions
